@@ -8,13 +8,11 @@ const ciDetect = require('@npmcli/ci-detect')
 const path = require('path')
 const inCI = ciDetect()
 
-// const packageFolder = path.dirname('@' + require.resolve(packageJson.name))
+const resolveOwn = p => path.resolve(__dirname, '..', p)
 
 const paths = {
-    templates: path.resolve('../templates')
+    templates: resolveOwn('templates')
 }
-console.log(paths.templates);
-console.log(__filename);
 
 const exec = (commands) => {
     return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit' })

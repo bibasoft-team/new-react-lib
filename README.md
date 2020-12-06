@@ -1,4 +1,6 @@
-# Utility for creating React libraries
+# new-react-lib
+
+Utility for creating React libraries
 
 ## use:
 
