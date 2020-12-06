@@ -14,8 +14,7 @@ const paths = {
     templates: path.resolve('../templates')
 }
 console.log(paths.templates);
-var filename = path.basename(__filename);
-console.log(filename);
+console.log(__filename);
 
 const exec = (commands) => {
     return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit' })
