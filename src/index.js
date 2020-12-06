@@ -8,9 +8,10 @@ const ciDetect = require('@npmcli/ci-detect')
 const path = require('path')
 const inCI = ciDetect()
 
+const packageFolder = path.dirname(require.resolve(packageJson.name))
 
 const paths = {
-    templates: require.resolve('../templates')
+    templates: path.resolve(packageFolder + '../templates')
 }
 
 console.log(paths.templates)
