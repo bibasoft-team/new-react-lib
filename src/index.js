@@ -8,6 +8,10 @@ const ciDetect = require('@npmcli/ci-detect')
 const path = require('path')
 const inCI = ciDetect()
 
+const fileURLToPath = require('url').fileURLToPath;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const resolveOwn = relativePath => path.resolve(__dirname, '..', relativePath);
 
 const paths = {
