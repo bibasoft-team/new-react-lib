@@ -16,3 +16,7 @@ npx new-react-lib my-awesome-lib
 ## Features
 
 - different templates (custom templates in future)
+
+# templates:
+
+- components
