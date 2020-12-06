@@ -5,10 +5,11 @@ const packageJson = require('../package.json')
 const fs = require('fs-extra')
 const chalk = require('chalk');
 const ciDetect = require('@npmcli/ci-detect')
+const path = require('path')
 const inCI = ciDetect()
 
 const paths = {
-    templates: require.resolve('templates'),
+    templates: path.resolve(__dirname, 'templates')
 }
 
 const exec = (commands) => {
@@ -52,7 +53,7 @@ program
         exec(`mkdir ${name}`)
 
         log(chalk('copy template...'))
-        let ignore = ['']
+        let ignore = []
         if (fs.existsSync(`${paths.templates}/${template}/.gitignore`)) {
             ignore = fs.readFileSync(`${paths.templates}/${template}/.gitignore`)
                 .toString()

@@ -1,7 +1,7 @@
 {
 	"name": "new-react-lib",
 	"description": "",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"main": "src/index.js",
 	"scripts": {
 		"start": "node src/index.js"
@@ -13,6 +13,7 @@
 		"chalk": "^4.1.0",
 		"commander": "^6.2.0",
 		"fs-extra": "^9.0.1",
+		"path": "^0.12.7",
 		"shelljs.exec": "^1.1.8"
 	},
 	"bin": {
