@@ -9,7 +9,10 @@
 	"author": "rediska1114@gmail.com",
 	"license": "ISC",
 	"dependencies": {
-		"commander": "^6.2.0"
+		"chalk": "^4.1.0",
+		"commander": "^6.2.0",
+		"fs-extra": "^9.0.1",
+		"shelljs.exec": "^1.1.8"
 	},
 	"bin": {
 		"new-react-lib": "src/index.js"

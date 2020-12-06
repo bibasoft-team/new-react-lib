@@ -1,0 +1,39 @@
+kind: pipeline
+type: docker
+name: production
+
+steps:
+  - name: publish
+    image: node:alpine
+    environment:
+      NPM_TOKEN:
+        from_secret: npm_token
+      NPM_EMAIL: rediska1114@gmail.com
+    commands:
+      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+      - npm publish --access public
+
+  - name: notify
+    image: appleboy/drone-telegram
+    settings:
+      token:
+        from_secret: telegram_token
+      to:
+        from_secret: telegram_chat_id
+      message: >
+        {{#success build.status}}
+        ✅ #{{build.number}} {{repo.name}} / {{commit.branch}} - {{commit.message}}.
+        {{else}}
+        🛑#{{build.number}} {{repo.name}} / {{commit.branch}} - {{commit.message}}.
+        @{{commit.author}} please fix it
+        {{/success}}
+    when:
+      status:
+        - success
+        - failure
+
+trigger:
+  event:
+    - push
+  branch:
+    - master
