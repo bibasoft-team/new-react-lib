@@ -7,6 +7,10 @@ const chalk = require('chalk');
 const ciDetect = require('@npmcli/ci-detect')
 const inCI = ciDetect()
 
+const paths = {
+    templates: require.resolve('templates'),
+}
+
 const exec = (commands) => {
     return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit' })
 }
@@ -33,7 +37,7 @@ program
     .action(function (name) {
         const template = program.template || 'components'
         const force = program.force || false
-        if (!fs.pathExistsSync(`templates/${template}`)) {
+        if (!fs.pathExistsSync(`${paths.templates}/${template}`)) {
             error(`Error: template ${template} does not exists!`)
             return
         }
@@ -49,14 +53,14 @@ program
 
         log(chalk('copy template...'))
         let ignore = ['']
-        if (fs.existsSync(`templates/${template}/.gitignore`)) {
-            ignore = fs.readFileSync(`templates/${template}/.gitignore`)
+        if (fs.existsSync(`${paths.templates}/${template}/.gitignore`)) {
+            ignore = fs.readFileSync(`${paths.templates}/${template}/.gitignore`)
                 .toString()
                 .split('\n')
                 .map(s => s.replace(/\#.*$/gm, ''))
                 .filter(s => /\S/gm.test(s))
         }
-        fs.copySync(`templates/${template}`, `${name}`, {
+        fs.copySync(`${paths.templates}/${template}`, `${name}`, {
             filter: (f) => !ignore.some(i => new RegExp(i).test(f))
         })
 
