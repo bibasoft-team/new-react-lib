@@ -1,0 +1,17 @@
+{
+	"name": "new-react-lib",
+	"description": "",
+	"version": "0.1.0",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js"
+	},
+	"author": "rediska1114@gmail.com",
+	"license": "ISC",
+	"dependencies": {
+		"commander": "^6.2.0"
+	},
+	"bin": {
+		"new-react-lib": "src/index.js"
+	}
+}
