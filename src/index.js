@@ -70,7 +70,7 @@ program
         })
 
         log(chalk('install dependencies...'))
-        exec('npm i')
+        exec(`cd ${name} && npm i && cd ..`)
         log(chalk.green(`Complete!`))
         log(chalk.blue(`Library ${name} created successfully`))
     })

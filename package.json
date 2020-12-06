@@ -1,7 +1,7 @@
 {
 	"name": "new-react-lib",
 	"description": "Utility for creating React libraries",
-	"version": "0.1.12",
+	"version": "0.1.13",
 	"main": "src/index.js",
 	"scripts": {
 		"start": "node src/index.js"
