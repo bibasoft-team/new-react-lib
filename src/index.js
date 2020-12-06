@@ -8,7 +8,9 @@ const ciDetect = require('@npmcli/ci-detect')
 const path = require('path')
 const inCI = ciDetect()
 
-const resolveOwn = p => path.resolve(__dirname, '..', p)
+const rootPath = path.resolve(path.dirname(__filename), '..')
+
+const resolveOwn = p => path.resolve(rootPath, p)
 
 const paths = {
     templates: resolveOwn('templates')
