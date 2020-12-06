@@ -16,8 +16,8 @@ const paths = {
     templates: resolveOwn('templates')
 }
 
-const exec = (commands) => {
-    return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit' })
+const exec = (commands, opt) => {
+    return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit', ...opt })
 }
 
 const log = console.log
@@ -70,7 +70,7 @@ program
         })
 
         log(chalk('install dependencies...'))
-        exec(`cd ${name} && npm i && cd ..`)
+        exec(`npm i`, { cwd: name })
         log(chalk.green(`Complete!`))
         log(chalk.blue(`Library ${name} created successfully`))
     })
