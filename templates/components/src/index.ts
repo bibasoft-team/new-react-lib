@@ -1,5 +1,5 @@
-const Biba = () => null
+import { TestComponent } from './components'
 
-export {
-    Biba
-}
+const Biba = (ttest: number) => ttest + 2
+
+export { Biba, TestComponent }
