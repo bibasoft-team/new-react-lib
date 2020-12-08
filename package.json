@@ -1,8 +1,11 @@
 {
-	"name": "new-react-lib",
+	"name": "new-react-lib-monorepo",
 	"description": "Utility for creating React libraries",
-	"version": "0.1.14",
-	"main": "src/index.js",
+	"version": "0.1.15",
+	"private": "true",
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
 		"start": "node src/index.js"
 	},
@@ -16,7 +19,8 @@
 		"path": "^0.12.7",
 		"shelljs.exec": "^1.1.8"
 	},
-	"bin": {
-		"new-react-lib": "src/index.js"
-	}
+	"devDependencies": {
+		"lerna": "^3.22.1"
+	},
+	"repository": "https://github.com/bibasoft-team/new-react-lib.git"
 }
