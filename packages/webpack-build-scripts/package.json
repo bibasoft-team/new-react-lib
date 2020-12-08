@@ -37,11 +37,12 @@
 	},
 	"repository": {
 		"type": "git",
-    "url": "git+https://github.com/bibasoft-team/new-react-lib.git",
-    "directory": "packages/webpack-build-scripts"
+		"url": "git+https://github.com/bibasoft-team/new-react-lib.git",
+		"directory": "packages/webpack-build-scripts"
 	},
 	"scripts": {
-		"test": "exit 0"
+		"test": "exit 0",
+		"build": "exit 0"
 	},
 	"bugs": {
 		"url": "https://github.com/bibasoft-team/new-react-lib/issues"

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const { program } = require('commander');
-const shelljs_exec = require('shelljs.exec')
-const packageJson = require('../package.json')
-const fs = require('fs-extra')
-const chalk = require('chalk');
-const ciDetect = require('@npmcli/ci-detect')
-const path = require('path')
+import { program } from 'commander';
+import shelljs_exec from 'shelljs.exec';
+import packageJson from '../package.json';
+import fs from 'fs-extra';
+import chalk from 'chalk';
+import ciDetect from '@npmcli/ci-detect';
+import path from 'path';
 const inCI = ciDetect()
 
 const rootPath = path.resolve(path.dirname(__filename), '..')
@@ -16,7 +16,7 @@ const paths = {
     templates: resolveOwn('templates')
 }
 
-const exec = (commands, opt) => {
+const exec = (commands, opt?: any) => {
     return shelljs_exec(Array.isArray(commands) ? commands.join(' ') : commands, { stdio: 'inherit', ...opt })
 }
 

@@ -1,0 +1,39 @@
+{
+	"name": "@bibasoft/new-react-lib",
+	"version": "0.1.0",
+	"description": "> TODO: description",
+	"author": "Stepan Kotov <rediska1114@gmail.com>",
+	"homepage": "https://github.com/bibasoft-team/new-react-lib#readme",
+	"license": "ISC",
+	"main": "dist/new-react-lib",
+	"types": "dist/new-react-lib",
+	"directories": {
+		"lib": "dist",
+		"test": "__tests__"
+	},
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bibasoft-team/new-react-lib.git"
+	},
+	"scripts": {
+		"build": "yarn run clean && yarn run compile",
+		"clean": "rm -rf ./dist",
+		"compile": "tsc -p tsconfig.build.json && cp -R lib/templates dist/templates",
+		"prepublishOnly": "yarn run build"
+	},
+	"dependencies": {
+		"@npmcli/ci-detect": "^1.3.0",
+		"chalk": "^4.1.0",
+		"commander": "^6.2.0",
+		"fs-extra": "^9.0.1",
+		"path": "^0.12.7",
+		"shelljs.exec": "^1.1.8",
+		"typescript": "^4.1.2"
+	},
+	"bugs": {
+		"url": "https://github.com/bibasoft-team/new-react-lib/issues"
+	}
+}
