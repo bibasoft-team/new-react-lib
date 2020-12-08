@@ -36,5 +36,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/bibasoft-team/new-react-lib/issues"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }

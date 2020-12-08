@@ -2,14 +2,13 @@
 	"name": "new-react-lib-monorepo",
 	"description": "Utility for creating React libraries",
 	"version": "0.1.15",
-	"private": true,
 	"workspaces": [
 		"packages/*"
 	],
 	"scripts": {
 		"clean": "lerna run clean",
 		"build": "lerna run build",
-		"pub": "lerna publish",
+		"pub": "lerna publish --no-git-tag-version --no-push",
 		"test": "lerna run test"
 	},
 	"author": "rediska1114@gmail.com",
