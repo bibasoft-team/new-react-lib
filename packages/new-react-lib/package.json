@@ -19,9 +19,10 @@
 		"url": "git+https://github.com/bibasoft-team/new-react-lib.git"
 	},
 	"scripts": {
-		"build": "yarn run clean && yarn run compile",
+		"build": "yarn run clean && yarn run compile && yarn run copy",
 		"clean": "rm -rf ./dist",
-		"compile": "tsc -p tsconfig.build.json && cp -R lib/templates dist/templates",
+		"compile": "tsc -p tsconfig.build.json",
+		"copy": "cp -R lib/templates dist/templates && cp README.md dist/README.md && cp .npmignore dist/.npmignore",
 		"prepublishOnly": "yarn run build"
 	},
 	"dependencies": {
